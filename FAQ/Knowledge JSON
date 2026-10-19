@@ -1,0 +1,44 @@
+{
+  "store_name": "Atari Sherwan",
+  "location": {
+    "sorani": "سۆران، کۆڵانی کەرکوکیان",
+    "badini": "سۆران، کۆلانا کەرکوکیان",
+    "arabic": "سوران، زقاق الكركوكيين",
+    "english": "Soran, Karkukyan Alley"
+  },
+  "phones": [
+    "07504367964",
+    "07504473857",
+    "07510068069"
+  ],
+  "services": {
+    "sorani": [
+      "فرۆشتنی کۆنسۆڵ",
+      "فرۆشتنی یاری",
+      "مۆدکردن",
+      "ئێکسسوارات",
+      "پشتیوانی"
+    ],
+    "badini": [
+      "فرۆتنا console",
+      "فرۆتنا game",
+      "mod kirin",
+      "accessories",
+      "support"
+    ],
+    "arabic": [
+      "بيع أجهزة الألعاب",
+      "بيع الألعاب",
+      "التعديل",
+      "الإكسسوارات",
+      "الدعم"
+    ],
+    "english": [
+      "Console sales",
+      "Game sales",
+      "Mods",
+      "Accessories",
+      "Support"
+    ]
+  }
+}

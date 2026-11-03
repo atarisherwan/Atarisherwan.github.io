@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="landing" lang="en" manifest="cache.appcache">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ATARI SHERWAN - AFTERGLOW</title>
+    <link rel="stylesheet" href="style.css" />
+  <style>
+body{background:#07101d !important;color:#f1f7ff !important}
+#brand{font:bold 34px Arial,sans-serif !important;color:#f3f8ff !important;letter-spacing:2px}
+.meme{display:none !important}
+.panel{border:1px solid #284b71 !important;background:#0b192c !important;box-shadow:0 0 60px rgba(41,161,237,.12) !important}
+.opt,.btn{display:none !important}
+.count{font:bold 20px Arial,sans-serif !important;color:#63ddfa !important;display:block !important}
+.byline{color:#80a0bb !important}
+</style>
+</head>
+  <body>
+    <!-- Every run starts from here. The referrer guard in jb.js arms the chain
+         only when it was reached from this page, so that a browser restoring
+         its last session cannot re-run it unattended. -->
+    <div id="brand"><b>ATARI SHERWAN</b></div>
+
+    <div class="shell">
+      <img class="meme" src="meme.png" alt="" />
+
+      <main class="panel">
+        <p class="lede">PS4 AUTO GOLDHEN &middot; FW 13.52 / 14.00</p>
+
+        <form class="pick" id="pick">
+          <label class="opt">
+            <input type="radio" name="payload" value="hen" />
+            <span>ps4-hen</span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="payload" value="goldhen" checked />
+            <span>GoldHEN</span>
+          </label>
+
+          <label class="opt opt-auto">
+            <input type="checkbox" id="auto" checked />
+            <span>autostart</span>
+          </label>
+
+          <button class="btn" type="submit">start</button>
+          <p class="count" id="count"></p>
+        </form>
+      </main>
+    </div>
+
+    <p class="byline">by well0nez/m0zz</p>
+    <script src="launch.js"></script>
+  </body>
+</html>

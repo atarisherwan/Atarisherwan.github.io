@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" manifest="shell.appcache">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#07101d">
+<title>ATARI SHERWAN | PS4 AUTO HOST</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;color:#f5faff;background:#060d19}
+body{background:#060d19;background-image:radial-gradient(ellipse at 50% 18%,#16304a 0%,#09172a 50%,#060d19 95%);overflow-x:hidden}
+.top{height:5px;background:linear-gradient(90deg,#ec2856 0%,#ec2856 33.33%,#f7f9fe 33.33%,#f7f9fe 66.66%,#20bd80 66.66%,#20bd80 100%)}
+.lines{position:absolute;left:0;top:5px;right:0;bottom:0;pointer-events:none;opacity:.18;background:repeating-linear-gradient(90deg,transparent 0,transparent 69px,#5389bf 70px,transparent 71px);mask-image:linear-gradient(to bottom,transparent,#000 37%,transparent 95%)}
+.shell{position:relative;max-width:920px;margin:0 auto;min-height:610px;padding:47px 26px 76px;text-align:center}
+.brand-top{font-size:12px;letter-spacing:7px;color:#87bde7;text-transform:uppercase}
+.brand{font-size:58px;font-size:clamp(33px,6.7vw,70px);letter-spacing:3px;font-weight:900;line-height:1.05;margin:15px 0 11px;text-shadow:0 0 35px rgba(87,155,227,.16)}
+.subtitle{font-size:13px;letter-spacing:4px;color:#70baff;font-weight:700}
+.emblem-wrap{position:relative;width:226px;height:226px;margin:42px auto 25px}
+.halo{position:absolute;top:0;right:0;bottom:0;left:0;border:2px solid #254865;border-radius:50%;box-shadow:0 0 75px rgba(36,146,226,.12),inset 0 0 65px rgba(36,146,226,.10)}
+.halo:before{content:"";position:absolute;top:12px;right:12px;bottom:12px;left:12px;border:1px dashed #387db3;border-radius:50%;animation:spin 35s linear infinite}
+.halo:after{content:"";position:absolute;top:-5px;right:-5px;bottom:-5px;left:-5px;border-radius:50%;border-top:3px solid #52d0ff;border-right:3px solid transparent;border-bottom:3px solid transparent;border-left:3px solid transparent;animation:spin 5s linear infinite;box-shadow:0 -4px 17px rgba(71,196,252,.21)}
+.emblem{position:absolute;left:34px;top:34px;width:158px;height:158px;border-radius:50%;background:linear-gradient(160deg,#193f62,#081421);border:1px solid #3c779f;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 44px rgba(15,83,141,.20)}
+.monogram{font-size:63px;color:#fff;font-weight:900;letter-spacing:-6px;margin-right:8px;text-shadow:0 0 26px rgba(141,209,255,.30)}
+.status{font-size:17px;color:#fff;letter-spacing:2.5px;font-weight:800;margin-top:2px;min-height:24px}
+.caption{font-size:12px;color:#789bb8;margin:12px 0 25px;letter-spacing:1.4px;min-height:14px}
+.progress{height:5px;width:86%;max-width:420px;background:#1a3048;border-radius:12px;margin:0 auto;overflow:hidden}
+.progress i{height:100%;width:28%;display:block;background:linear-gradient(90deg,#2b83d7,#6ee7e8);border-radius:10px;box-shadow:0 0 15px #38bdf8;animation:flow 1.6s ease-in-out infinite}
+.meta{max-width:480px;display:flex;justify-content:space-between;align-items:center;margin:31px auto 0;padding:18px 16px;border-top:1px solid #26425b;color:#79a0c2;font-size:12px;letter-spacing:1px;text-align:left}
+.meta b{display:block;margin-top:7px;font-size:16px;color:#f1f6ff;font-weight:700;letter-spacing:1px}
+.meta .right{text-align:right}
+.footer{padding:0 16px 25px;text-align:center;color:#52738c;font-size:10px;letter-spacing:2px}
+.demo{display:none;margin:12px auto 0;color:#f0ca86;font-size:11px}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes flow{0%{transform:translateX(-120%)}100%{transform:translateX(470%)}}
+@media(max-width:650px){.shell{min-height:560px;padding:38px 15px 48px}.brand{font-size:37px;letter-spacing:1px}.brand-top{letter-spacing:3px}.subtitle{letter-spacing:2px;font-size:11px}.emblem-wrap{margin-top:37px}.meta{margin-top:26px}.status{font-size:14px}}
+</style>
+</head>
+<body>
+<div class="top"></div><div class="lines"></div>
+<main class="shell">
+<div class="brand-top">Premium PlayStation Experience</div>
+<h1 class="brand">ATARI SHERWAN</h1>
+<div class="subtitle">PS4 &nbsp; / &nbsp; AUTO GOLDHEN HOST</div>
+<div class="emblem-wrap"><div class="halo"></div><div class="emblem"><div class="monogram">AS</div></div></div>
+<div class="status" id="status">DETECTING CONSOLE</div>
+<p class="caption" id="detail">SECURE FIRMWARE DETECTION</p>
+<div class="progress" id="progress"><i></i></div>
+<div class="meta"><div class="left">DETECTED FIRMWARE<b id="fw">—</b></div><div class="right">EXPLOIT CHAIN<b id="chain">AUTO</b></div></div>
+<div class="demo" id="demo">DESIGN PREVIEW ONLY — NO JAILBREAK IS RUNNING</div>
+</main>
+<div class="footer">ATARI SHERWAN &nbsp; · &nbsp; PS4 9.00–14.00 &nbsp; · &nbsp; RESEARCH / TEST HOST</div>
+<script>
+(function(){
+'use strict';
+var status=document.getElementById('status');
+var detail=document.getElementById('detail');
+var fwEl=document.getElementById('fw');
+var chainEl=document.getElementById('chain');
+var progress=document.getElementById('progress');
+function msg(a,b){status.textContent=a;detail.textContent=b||'';}
+function stop(){progress.style.display='none';}
+function loadFw(){
+ var match=/PlayStation\s*4[\/ ]([0-9]+)\.([0-9]+)/i.exec(navigator.userAgent||'');
+ if(!match)return null;
+ var major=parseInt(match[1],10),minor=match[2];
+ if(isNaN(major)||major<0||minor.length>2)return null;
+ return major+'.'+(minor.length===1?'0':'')+minor;
+}
+var demo=/(?:\?|&)demo=1(?:&|$)/.test(location.search);
+if(demo){document.getElementById('demo').style.display='block';fwEl.textContent='14.00';chainEl.textContent='AFTERGLOW';msg('AUTO HOST READY','DEMO MODE - NO EXPLOIT EXECUTION');stop();return;}
+var fw=loadFw();
+if(!fw){fwEl.textContent='UNKNOWN';chainEl.textContent='—';msg('PLAYSTATION 4 REQUIRED','OPEN THIS PAGE FROM THE PS4 WEB BROWSER');stop();return;}
+fwEl.textContent=fw;
+var route={
+ '9.00':['900/cache.html','PSFREE / LAPSE'],
+ '9.03':['900/cache.html','PSFREE / LAPSE'],
+ '9.04':['900/cache.html','PSFREE / LAPSE'],
+ '9.50':['900/cache.html','PSFREE / LAPSE'],
+ '9.51':['900/cache.html','PSFREE / LAPSE'],
+ '9.60':['900/cache.html','PSFREE / LAPSE'],
+ '10.00':['css/latest/index.html','CSS / LAPSE'],
+ '10.01':['css/latest/index.html','CSS / LAPSE'],
+ '10.50':['css/latest/index.html','CSS / LAPSE'],
+   '11.00':['css/latest/index.html','CSS / LAPSE'],
+ '11.02':['css/latest/index.html','CSS / LAPSE'],
+ '11.50':['slopkit/latest/index.html','SLOPKIT / LAPSE'],
+ '11.52':['slopkit/latest/index.html','SLOPKIT / LAPSE'],
+ '12.00':['slopkit/latest/index.html','SLOPKIT / LAPSE'],
+ '12.02':['slopkit/latest/index.html','SLOPKIT / LAPSE'],
+ '12.50':['slopkit/latest/index.html','SLOPKIT / POOPS'],
+ '12.52':['slopkit/latest/index.html','SLOPKIT / POOPS'],
+ '13.00':['slopkit/latest/index.html','SLOPKIT / POOPS'],
+ '13.02':['relapse/goldhen/index.html','SLOPKIT / RELAPSE'],
+ '13.04':['relapse/goldhen/index.html','SLOPKIT / RELAPSE'],
+ '13.50':['relapse/goldhen/index.html','SLOPKIT / RELAPSE'],
+ '13.52':['relapse/goldhen/index.html','SLOPKIT / RELAPSE'],
+ '14.00':['afterglow/index.html','AFTERGLOW / EXPERIMENTAL']
+};
+var r=route[fw];
+if(!r){chainEl.textContent='UNSUPPORTED';msg('NO MATCHING KERNEL PATCH FOR '+fw,'EXPLOIT BLOCKED TO PROTECT THE CONSOLE');stop();return;}
+chainEl.textContent=r[1];
+msg('PREPARING JAILBREAK','ROUTING TO SOURCE EXPLOIT CHAIN');
+try{localStorage.setItem('autoJb','true');localStorage.setItem('exploitChain','lapse')}catch(e){}
+var target=r[0];
+setTimeout(function(){msg('STARTING EXPLOIT','DO NOT POWER OFF THE CONSOLE');location.replace(target);},900);
+})();
+</script>
+</body>
+</html>

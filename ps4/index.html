@@ -95,6 +95,7 @@ var route={
  '13.52':['relapse/goldhen/index.html','SLOPKIT / RELAPSE'],
  '14.00':['afterglow/index.html','AFTERGLOW / EXPERIMENTAL']
 };
+if(fw==='14.00'){chainEl.textContent='PAUSED';msg('14.00 TEMPORARILY DISABLED','SAFETY HOLD');stop();return;}
 var r=route[fw];
 if(!r){chainEl.textContent='UNSUPPORTED';msg('NO MATCHING KERNEL PATCH FOR '+fw,'EXPLOIT BLOCKED TO PROTECT THE CONSOLE');stop();return;}
 chainEl.textContent=r[1];

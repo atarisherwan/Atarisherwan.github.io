@@ -1,7 +1,9 @@
 CACHE MANIFEST 
+# ATARI_SHERWAN_LOGO_2026 20261103-172336
 #VERSION 1.7
 
 CACHE: 
+../assets/sherwan-symbol.png
 alert5.js
 cache5.html
 config.js

@@ -95,7 +95,19 @@ var route={
  '13.52':['relapse/goldhen/index.html','SLOPKIT / RELAPSE'],
  '14.00':['afterglow/index.html','AFTERGLOW / EXPERIMENTAL']
 };
-if(fw==='14.00'){chainEl.textContent='PAUSED';msg('14.00 TEMPORARILY DISABLED','SAFETY HOLD');stop();return;}
+
+if(fw==='14.00'){
+ chainEl.textContent='AFTERGLOW';
+ msg('14.00 READY','EXPERIMENTAL - MANUAL START');
+ stop();
+ var b=document.createElement('button');
+ b.textContent='START 14.00';
+ b.style.cssText='margin-top:25px;padding:15px 35px;background:#187ad4;color:white;border:0;border-radius:10px;font-size:20px';
+ b.onclick=function(){location.href='afterglow/index.html';};
+ document.querySelector('.shell').appendChild(b);
+ return;
+}
+
 var r=route[fw];
 if(!r){chainEl.textContent='UNSUPPORTED';msg('NO MATCHING KERNEL PATCH FOR '+fw,'EXPLOIT BLOCKED TO PROTECT THE CONSOLE');stop();return;}
 chainEl.textContent=r[1];

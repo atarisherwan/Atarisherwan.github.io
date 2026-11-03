@@ -163,6 +163,6 @@ form.addEventListener("change", function (ev) {
   }
 });
 
-restore(); autoBox.checked=false;
+restore();
 cacheNote();
 if (autoBox.checked) startClock();

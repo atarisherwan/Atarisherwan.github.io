@@ -4,6 +4,8 @@ CACHE MANIFEST
 CACHE:
 assets/sherwan-symbol.png #587d3209db0d0ec307dd91eab96e66d4
 index.html
+# ATARI TEST 10xx preview update (does not change existing kernel chains)
+fw10xx-isolated/index.html
 NETWORK:
 *
 

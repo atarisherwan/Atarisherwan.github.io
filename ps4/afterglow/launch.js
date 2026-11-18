@@ -164,5 +164,13 @@ form.addEventListener("change", function (ev) {
 });
 
 restore();
+/* A visit routed from ATARI SHERWAN's auto host explicitly requests
+   GoldHEN autostart, even if a previous manual choice disabled it.
+   Direct visits to Afterglow retain the user's saved preferences. */
+if (/(?:\?|&)atari_auto=1(?:&|$)/.test(location.search)) {
+  var goldhen = form.querySelector('input[name="payload"][value="goldhen"]');
+  if (goldhen) goldhen.checked = true;
+  autoBox.checked = true;
+}
 cacheNote();
 if (autoBox.checked) startClock();

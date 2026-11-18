@@ -1,4 +1,5 @@
 CACHE MANIFEST
+# ATARI SHERWAN AUTO 1402 CACHE REVISION 2026-11-16
 # ATARI_SHERWAN_LOGO_2026 20261103-172336
 # ATARI SHERWAN ROOT SHELL 2026-11-03 v4-manual14
 CACHE:
@@ -10,3 +11,41 @@ NETWORK:
 *
 
 # refresh 12.52-only route 2026-11-04 v1
+
+# 14.00 Afterglow offline preload (same files as afterglow/cache.appcache)
+afterglow/index.html
+afterglow/jb.html
+afterglow/style.css
+afterglow/launch.js
+afterglow/meme.png
+afterglow/jb.js
+afterglow/core.js
+afterglow/mem.js
+afterglow/int64.js
+afterglow/ps4_offsets.js
+afterglow/afterglow.js
+afterglow/patchset-1400.bin
+afterglow/patchset-1352.bin
+afterglow/hen.bin
+afterglow/goldhen.bin
+afterglow/cache.appcache
+
+# 14.02 isolated chain and offline resources
+afterglow-1402/index.html
+afterglow-1402/jb.html
+afterglow-1402/style.css
+afterglow-1402/launch.js
+afterglow-1402/meme.png
+afterglow-1402/jb.js
+afterglow-1402/core.js
+afterglow-1402/mem.js
+afterglow-1402/int64.js
+afterglow-1402/ps4_offsets.js
+afterglow-1402/afterglow.js
+afterglow-1402/patchset-1402.bin
+afterglow-1402/hen.bin
+afterglow-1402/goldhen.bin
+afterglow-1402/cache.appcache
+afterglow-1402/SOURCE_AND_LICENSE.html
+afterglow-1402/LICENSE
+afterglow-1402/LICENSE-raw13g

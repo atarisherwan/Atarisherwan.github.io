@@ -1,15 +1,13 @@
 CACHE MANIFEST
-# ATARI SHERWAN AUTO 1402 CACHE REVISION 2026-11-16
+# ATARI SHERWAN AUTO 1402 CACHE REVISION 2026-11-21 fixed CACHE section
 # ATARI_SHERWAN_LOGO_2026 20261103-172336
 # ATARI SHERWAN ROOT SHELL 2026-11-03 v4-manual14
 CACHE:
-assets/sherwan-symbol.png #587d3209db0d0ec307dd91eab96e66d4
+# Asset: sherwan-symbol.png
+assets/sherwan-symbol.png
 index.html
 # ATARI TEST 10xx preview update (does not change existing kernel chains)
 fw10xx-isolated/index.html
-NETWORK:
-*
-
 # refresh 12.52-only route 2026-11-04 v1
 
 # 14.00 Afterglow offline preload (same files as afterglow/cache.appcache)
@@ -49,3 +47,6 @@ afterglow-1402/cache.appcache
 afterglow-1402/SOURCE_AND_LICENSE.html
 afterglow-1402/LICENSE
 afterglow-1402/LICENSE-raw13g
+
+NETWORK:
+*
